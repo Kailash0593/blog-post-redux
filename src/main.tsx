@@ -11,8 +11,8 @@ createRoot(document.getElementById('root')!).render(
   // <StrictMode>
   //   <App />
   // </StrictMode>,
-  <Provider store={store}>
-    <RouterProvider router={router}>
+  <Provider store={store} >
+    <RouterProvider router={router} >
 
     </RouterProvider>
   </Provider>
