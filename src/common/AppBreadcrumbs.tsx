@@ -8,7 +8,7 @@ export default function AppBreadcrumbs() {
     console.log("pathnames", pathnames)
 
     return (
-        <Breadcrumbs aria-label="breadcrumb" className='px-3! py-2! fixed top-16 w-full bg-white z-1'>
+        <Breadcrumbs aria-label="breadcrumb" className='px-3! pt-4! pb-2! fixed top-14 w-full bg-white z-100'>
             <Link
                 component={RouterLink}
                 underline="hover"
