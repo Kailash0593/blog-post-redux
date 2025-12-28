@@ -7,6 +7,10 @@ export const asyncGetAllPosts = createAsyncThunk("posts/asyncGetAllPosts", (user
     return postsHttpClass.getAllPost(userId)
 })
 
+export const asyncGetPost = createAsyncThunk("posts/asyncGetPost", (postId: number) => {
+    return postsHttpClass.getPost(postId)
+})
+
 export const asyncDeletePost = createAsyncThunk("posts/asyncDeletePost", (postId: number) => {
     return postsHttpClass.deletePost(postId)
 })

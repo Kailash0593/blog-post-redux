@@ -2,15 +2,19 @@ import { useSelector } from "react-redux"
 import type { RootStore } from "../store"
 
 export const usePostSelector = () => {
-    const userSelector = useSelector((store: RootStore) => store.posts);
+    const postSelector = useSelector((store: RootStore) => store.posts);
 
     const getAllPosts = (userId: number) => {
-        return userSelector.posts.filter(p => p.userId===userId);
+        return postSelector.posts.filter(p => p.userId === userId);
+    }
+
+    const getPost = () => {
+        return postSelector.post;
     }
 
     const getState = () => {
-        return userSelector.state;
+        return postSelector.state;
     }
 
-    return { getAllPosts, getState };
+    return { getAllPosts, getPost, getState };
 }

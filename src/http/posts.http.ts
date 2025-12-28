@@ -9,6 +9,11 @@ export class PostsHttpClass {
         return response.json();
     }
 
+    async getPost(postId: number): Promise<PostI> {
+        const response = await fetch(url.post(postId));
+        return response.json();
+    }
+
     async deletePost(postId: number):  Promise<PostI> {
         console.log("postId", postId)
         const response = await fetch(`${url.post(postId)}`, {

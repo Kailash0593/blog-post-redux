@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { asyncDeletePost, asyncGetAllPosts, usePostSelector } from "../../store/posts";
+import { asyncDeletePost, asyncGetAllPosts, fromPostsReducer, usePostSelector, asyncGetUser, useUserSelector } from "../../store";
 import type { PostI, UserI } from "../../interface";
 import type React from "react";
 import { Alert, IconButton } from "@mui/material";
@@ -8,10 +8,9 @@ import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../store/store";
 import { useEffect } from "react";
 import { PostCard } from "./PostCard";
-import { asyncGetUser, useUserSelector } from "../../store/users";
 
 export const Posts = () => {
-  const { id } = useParams<{ id: string }>()!;
+  const { id } = useParams<{ id: string }>();
   const postSelector = usePostSelector();
   const userSelector = useUserSelector();
   const navigate = useNavigate();
@@ -33,6 +32,7 @@ export const Posts = () => {
   }
 
   const onSelectPost = (post: PostI) => {
+    dispatch(fromPostsReducer.selectPost(post));
     navigate(`${post.id}`);
   }
 

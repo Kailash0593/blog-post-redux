@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from './../../store/store';
-import { asyncGetAllUsers, fromUserReducer, useUserSelector } from '../../store/users';
+import { asyncGetAllUsers, fromUserReducer, useUserSelector } from '../../store';
 import { useEffect } from 'react';
 import { UserProfileCard } from './UserProfileCard';
 import type { UserI } from '../../interface';
@@ -63,7 +63,7 @@ export const Users = () => {
   return (
     <>
       <div className='p-2 h-full'>
-        <h1 className='text-2xl'>Select a user to explore all the blogs they’ve created.</h1>
+        <h1 className='text-2xl'>Select any user to explore all the blogs they’ve created.</h1>
         {profileNode}
       </div>
     </>

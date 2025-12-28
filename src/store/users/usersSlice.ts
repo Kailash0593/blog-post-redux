@@ -18,8 +18,8 @@ export const usersSlice = createSlice({
     name: "users",
     initialState,
     reducers: {
-        selectUser: (state, user: PayloadAction<UserI>) => {
-            state.user = user.payload;
+        selectUser: (state, action: PayloadAction<UserI>) => {
+            state.user = action.payload;
         }
     },
     extraReducers: (builder) => {
